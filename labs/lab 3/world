@@ -1,0 +1,46 @@
+# world
+# Vanessa Rivera
+#
+# This file is parsed line by line to gather the data of a saved state for any world.
+#
+# Each line begins with a command, described below, then any number of spaces:
+# - '#' Specifies a comment
+# - 'Rows:': Specifies the height of the world
+# - 'Cols:': Specifies the width of the world
+# - 'Background:': Specifies a row of background ImageLibrary keys
+#   - Must occur only after 'Rows' and 'Cols' is are specified
+#   - May only be used a number of times equal to the height of the world
+#   - Must contain a number of keys equal to the width of the world
+#   - Each ImageLibrary key is separated by a *single* space
+#   - The position of each key in the row corresponds to its column position in the world
+#   - The first occurrence corresponds to row position zero in the world, the second to position one, etc.
+# - 'Actor:': Specifies an actor that exists in the world.
+#   - The format for this is as follows:
+#     ```
+#     KEY X_POSITION Y_POSITION UPDATE_PERIOD
+#     ```
+#     where the values in rest depend on the key.
+#   - Entities can be specified without an id, leaving two spaces between the [key] and [x] position
+#
+# The remainder of this file contains commands to construct the world
+Rows: 9
+Cols: 9
+Background: grass grass grass grass grass grass grass grass grass
+Background: grass dirt_down grass grass dirt_down grass grass dirt_down grass
+Background: grass dirt_up grass grass dirt_up grass grass dirt_up grass
+Background: grass grass grass flowers flowers flowers grass grass grass
+Background: grass dirt_down grass flowers grass flowers grass dirt_down grass
+Background: grass dirt_up grass flowers flowers flowers grass dirt_up grass
+Background: grass grass grass grass grass grass grass grass grass
+Background: grass dirt_down grass grass dirt_down grass grass dirt_down grass
+Background: grass dirt_up grass grass dirt_up grass grass dirt_up grass
+Actor: rose 1 1 0.01
+Actor: rose 4 1 0.01
+Actor: rose 7 1 0.01
+Actor: rose 1 4 0.01
+Actor: rose 7 4 0.01
+Actor: rose 1 7 0.01
+Actor: rose 4 7 0.01
+Actor: rose 7 7 0.01
+Actor: well 4 4 1.00
+Actor: gardener 4 3 0.325
